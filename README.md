@@ -7,6 +7,8 @@ It's assumed that you run scripts from the current drectory. E.G.
 ```powershell
 Connect-VIServer -Server <Server>
 .\CIS_1\CIS_1.1.ps1
+.\CIS_1\CIS_1.2.ps1
+... etc
 ```
 
 ## ToDo
