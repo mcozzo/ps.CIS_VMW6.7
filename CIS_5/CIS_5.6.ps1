@@ -2,9 +2,8 @@
 ## List the var Settings for all hosts
 #Write-host ("expected NTP servers: " + $VAR ) -ForegroundColor Yellow 
 
-# May need "| Out-Host" on the end of the checks. 
-# PUT CODE HERE
-#
+# To check if Lockdown mode is enabled
+Get-VMHost | Select Name,@{N="Lockdown";E={$_.Extensiondata.Config.adminDisabled}}
 
 Write-host "Would you like remediate?" -ForegroundColor Yellow 
     $Readhost = Read-Host " ( y / n ) " 
@@ -16,9 +15,9 @@ Write-host "Would you like remediate?" -ForegroundColor Yellow
     } 
 
 If($Remediate) {
-    
-    # May need "-Confirm:$false"
+    # Set the NTP settings for all hosts
     #
-    # PUT CODE HERE
+    # Enable lockdown mode for each host
+    Get-VMHost | Foreach { $_.EnterLockdownMode() }
     #
 }

@@ -1,12 +1,18 @@
 ﻿
-## List the var Settings for all hosts
-#Write-host ("expected NTP servers: " + $VAR ) -ForegroundColor Yellow 
 
-# May need "| Out-Host" on the end of the checks. 
-# PUT CODE HERE
-#
+$Expected = "Expected: <null> " 
+
+## List the var Settings for all hosts
+Write-host ( $Expected ) -ForegroundColor Yellow 
+
+# Check for USB Devices attached to VMs 
+Get-VM | Get-USBDevice | select *
+
+## List the var Settings for all hosts
+Write-host ( $Expected ) -ForegroundColor Yellow 
 
 Write-host "Would you like remediate?" -ForegroundColor Yellow 
+Write-host "Caution remediation not tested!" -ForegroundColor Red 
     $Readhost = Read-Host " ( y / n ) " 
     Switch ($ReadHost) 
     { 
@@ -16,9 +22,10 @@ Write-host "Would you like remediate?" -ForegroundColor Yellow
     } 
 
 If($Remediate) {
-    
-    # May need "-Confirm:$false"
     #
-    # PUT CODE HERE
+    # Remove all USB Devices attached to VMs 
+    Get-VM | Get-USBDevice | Remove-USBDevice 
     #
 }
+
+
