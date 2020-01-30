@@ -12,7 +12,7 @@ Connect-VIServer -Server <Server>
 ```
 
 ## ToDo
-[] Build a script to launch all checks from the root dir instead of running each individually
+- [ ] Build a script to launch all checks from the root dir instead of running each individually
 
 ## Contributors 
 Based on the CIS documentation for vSphere 6.7
