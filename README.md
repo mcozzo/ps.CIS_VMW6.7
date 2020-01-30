@@ -13,3 +13,8 @@ Connect-VIServer -Server <Server>
 
 ## ToDo
 * Build a script to launch all checks from the root dir instead of running each individually
+
+## Contributors 
+Based on the CIS documentation for vSphere 6.7
+* https://www.cisecurity.org/
+** Powershell started from CIS doc, updated to actually work 
