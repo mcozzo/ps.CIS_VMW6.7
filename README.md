@@ -1,6 +1,6 @@
 # CIS VMware 6.7 settings
 CIS V1.0.0 <br>
-Just L1 settings
+Just L1 audit / remediate powershell stuff
 
 ## Running
 It's assumed that you run scripts from the current drectory. E.G.
